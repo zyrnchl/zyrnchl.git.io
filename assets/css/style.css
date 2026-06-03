@@ -364,9 +364,81 @@ textarea.custom-input {
   }
 }
 
+/* ── RESPONSIVE: TABLET ── */
+@media (max-width: 991px) {
+  .project-card {
+    flex-direction: column;
+  }
+
+  .project-image {
+    width: 100%;
+    min-height: 180px;
+  }
+
+  .project-content {
+    padding: 28px 30px;
+  }
+
+  .project-content h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* ── RESPONSIVE: MOBILE ── */
 @media (max-width: 767px) {
   .card-section {
-    padding: 28px 22px;
+    padding: 20px 16px;
+  }
+
+  .project-card {
+    flex-direction: column;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .project-image {
+    width: 100%;
+    min-height: 150px;
+  }
+
+  .project-content {
+    padding: 22px 20px;
+  }
+
+  .project-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .project-content p {
+    font-size: 0.88rem;
+    margin-bottom: 14px;
+  }
+
+  .panel-icon {
+    font-size: 2.2rem;
+  }
+
+  .project-tags {
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 0.72rem;
+    padding: 3px 10px;
+  }
+
+  .btn-project {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+  }
+
+  .page-header {
+    padding: 30px 0 16px;
+  }
+
+  .section-title {
+    font-size: 1.9rem;
   }
 }
 
@@ -402,7 +474,7 @@ footer {
 }
 /* ── SUNSET PAGES PROJECT ── */
 .sunset-bg {
-  background: linear-gradient(160deg, #c97b63 0%, #e8a87c 40%, #f2c97a 70%, #c97b63 100%);
+  background: linear-gradient(160deg, #c97b63 0%, #d4886a 30%, #e8a87c 55%, #f2c87a 80%, #c97b63 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -671,11 +743,11 @@ footer {
 }
 
 .sunset-hero {
-  background: linear-gradient(160deg, #c97b63 0%, #e8a87c 45%, #f2c97a 100%);
+  background: linear-gradient(160deg, #c97b63 0%, #d4886a 35%, #e8a87c 60%, #f2c97a 100%);
 }
 
 .furniture-hero {
- background: linear-gradient(160deg, #dc8c3d 30%, #e8a730 50%, #f8e256 100%);
+ background: linear-gradient(160deg, #c97b63 0%, #d4956a 40%, #e8b86a 75%, #f0c97a 100%);
 }
 
 .detail-hero-icon {
@@ -810,12 +882,12 @@ footer {
 }
 
 .sunset-hero {
-  background: linear-gradient(160deg, #c97b63 0%, #e8a87c 45%, #f2c97a 100%);
+  background: linear-gradient(160deg, #c97b63 0%, #d4886a 35%, #e8a87c 60%, #f2c97a 100%);
 }
 
 .furniture-hero {
   background: 
-  linear-gradient(160deg, #dc8c3d 0%, #e3bd41 50%, #e8c898 100%);
+  linear-gradient(160deg, #b56b55 0%, #c97b63 35%, #d4956a 60%, #e8c278 100%);
 }
 
 .puzzle-hero {
@@ -970,14 +1042,14 @@ footer {
 
 /* ── PROJECT CARD GRADIENT PANELS ── */
 .furniture-panel {
-  background: linear-gradient(160deg, #dc8c3d 30%, #e8a730 50%, #f8e256 100%);
+  background: linear-gradient(160deg, #c97b63 0%, #d4956a 40%, #e8b86a 75%, #f0c97a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .sunset-panel {
-  background: linear-gradient(160deg, #c97b63 0%, #e8a87c 40%, #f2c97a 70%, #c97b63 100%);
+  background: linear-gradient(160deg, #c97b63 0%, #d4886a 30%, #e8a87c 55%, #f2c87a 80%, #c97b63 100%);
   display: flex;
   align-items: center;
   justify-content: center;
