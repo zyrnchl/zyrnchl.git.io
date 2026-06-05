@@ -890,8 +890,8 @@ footer {
   linear-gradient(160deg, #b56b55 0%, #c97b63 35%, #d4956a 60%, #e8c278 100%);
 }
 
-.puzzle-hero {
-  background: linear-gradient(160deg, #3d2219 0%, #c97b63 60%, #e8b4a0 100%);
+.kodular-hero {
+ linear-gradient(160deg, #ff9868 20%, #eea283 40%, #ecaa7e 80%, #d98971 90%);
 }
 
 .detail-hero-icon {
@@ -1049,6 +1049,13 @@ footer {
 }
 
 .sunset-panel {
+  background: linear-gradient(160deg, #c97b63 0%, #d4886a 30%, #e8a87c 55%, #f2c87a 80%, #c97b63 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kodular-panel {
   background: linear-gradient(160deg, #c97b63 0%, #d4886a 30%, #e8a87c 55%, #f2c87a 80%, #c97b63 100%);
   display: flex;
   align-items: center;
