@@ -12,6 +12,27 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ── FORCE 3-COLUMN GRID ── */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+    @media (max-width: 991px) {
+      .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+    }
+    @media (max-width: 600px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -44,51 +65,47 @@
   <!-- PROJECTS -->
   <section class="section pt-0">
     <div class="container">
-      <div class="card-section">
+      <div class="project-grid">
 
-        <!-- PROJECT 1 -->
-        <div class="project-card">
+        <!-- ROW 1 ─────────────────────────────────── -->
+
+        <!-- PROJECT 1: Sunset Pages -->
+        <article class="project-card">
           <div class="project-image sunset-panel">
             <i class="fas fa-book-open panel-icon"></i>
           </div>
           <div class="project-content">
-            <h3>SUNSET PAGES ONLINE BOOKSTORE</h3>
             <span class="project-badge">HTML · CSS · JavaScript</span>
+            <h3>Sunset Pages — Online Bookstore</h3>
             <p>
-              Sunset Pages is a visually immersive online bookstore inspired by the beauty of sunsets and the joy of
-              reading.
-              The platform combines a warm, sunset-themed design with curated galleries of photography and cozy
-              bookstore interiors.
-              It features interactive elements such as a 5-star rating system and genre-based book discovery, all built
-              with responsive design principles to ensure a smooth experience across devices.
+              A visually immersive online bookstore inspired by the beauty of sunsets and the joy of reading.
+              Features a warm sunset-themed design, curated photo galleries, a 5-star rating system,
+              and genre-based book discovery — all built with responsive design principles.
             </p>
             <div class="project-tags">
               <span class="tag">Image Gallery</span>
               <span class="tag">Star Rating</span>
-              <span class="tag">Responsive Design</span>
+              <span class="tag">Responsive</span>
               <span class="tag">UI/UX</span>
             </div>
-            <a href="sunsetpages.html" class="btn btn-project mt-3">View Project →</a>
+            <a href="https://github.com/bethanyzyreen/Sunset_Pages.git" target="_blank" rel="noopener noreferrer" class="btn btn-project mt-3">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
           </div>
-        </div>
+        </article>
 
-
-        <!-- PROJECT 2 -->
-        <div class="project-card">
-          <div class="project-image kodular-panel">
+        <!-- PROJECT 2: Zyreen Mobile App — links to local HTML file -->
+        <article class="project-card">
+          <div class="project-image sunset-panel">
             <i class="fas fa-mobile-alt panel-icon"></i>
           </div>
           <div class="project-content">
-            <h3>ZYREEN : A MOBILE BOOKSTORE APP</h3>
             <span class="project-badge">Kodular · Android</span>
+            <h3>Zyreen — Mobile Bookstore App</h3>
             <p>
-              Zyreen is a mobile bookstore application built using Kodular, a block-based Android app development
-              platform.
-              The app features a clean green-themed UI with a product catalog showcasing books such as <em>The Book
-                Thief</em>, <em>Gulliver's Travels</em>, and more — complete with pricing in Philippine Peso and an Add
-              to Cart flow.
-              The app includes an About Us section, a Products page, and a Contact Us screen, all wrapped in an
-              intuitive mobile-first experience.
+              A mobile bookstore app built with Kodular featuring a clean green-themed UI, a product catalog
+              with books like <em>The Book Thief</em> and <em>Gulliver's Travels</em>, pricing in Philippine
+              Peso, an Add to Cart flow, and About Us, Products, and Contact screens.
             </p>
             <div class="project-tags">
               <span class="tag">Kodular</span>
@@ -96,24 +113,24 @@
               <span class="tag">Mobile App</span>
               <span class="tag">Bookstore</span>
             </div>
-            <a href="kodular.html" class="btn btn-project mt-3">View Project →</a>
+            <a href="zyreen-mobile.html" class="btn btn-project mt-3">
+              <i class="fas fa-eye"></i> View Project
+            </a>
           </div>
-        </div>
+        </article>
 
-        <!-- PROJECT 3 -->
-        <div class="project-card">
-          <div class="project-image furniture-panel">
+        <!-- PROJECT 3: Zythera Furniture -->
+        <article class="project-card">
+          <div class="project-image sunset-panel">
             <i class="fas fa-couch panel-icon"></i>
           </div>
           <div class="project-content">
-            <h3>ZYTHERA : A PREMIUM FURNITURE MARKETPLACE</h3>
             <span class="project-badge">PHP · MySQL · CSS</span>
+            <h3>Zythera — Premium Furniture Marketplace</h3>
             <p>
-              Zythera is a full-stack furniture e-commerce and management system built with PHP, Bootstrap, and MySQL.
-              The project delivers a polished shopping experience with a product-first catalog, shopping cart, and
-              checkout flow.
-              It also includes an admin dashboard for order management, inventory tracking, and product updates, all
-              wrapped in a responsive design that adapts seamlessly across devices.
+              A full-stack furniture e-commerce system built with PHP, Bootstrap, and MySQL.
+              Features a polished product catalog, shopping cart, checkout flow, and an admin
+              dashboard for order management, inventory tracking, and product updates.
             </p>
             <div class="project-tags">
               <span class="tag">E-Commerce</span>
@@ -121,15 +138,95 @@
               <span class="tag">Responsive</span>
               <span class="tag">MySQL</span>
             </div>
-            <a href="Furniture.html" class="btn btn-project mt-3">View Project →</a>
+            <a href="https://github.com/snckish/Zythera.git" target="_blank" rel="noopener noreferrer" class="btn btn-project mt-3">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
           </div>
-        </div>
+        </article>
 
+        <!-- ROW 2 ─────────────────────────────────── -->
+
+        <!-- PROJECT 4: Alien Invasion -->
+        <article class="project-card">
+          <div class="project-image sunset-panel">
+            <i class="fas fa-rocket panel-icon"></i>
+          </div>
+          <div class="project-content">
+            <span class="project-badge">Python · Pygame</span>
+            <h3>Alien Invasion — 2D Space Shooter</h3>
+            <p>
+              A classic arcade-style 2D space shooter built with Python and Pygame.
+              Move with arrow keys, fire with <kbd>Z</kbd>, and destroy waves of descending aliens.
+              Features a scoring system, high score tracking, level-up speed scaling, and
+              a ship-icon lives counter.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pygame</span>
+              <span class="tag">Game Dev</span>
+              <span class="tag">OOP</span>
+            </div>
+            <a href="https://github.com/bethanyzyreen/alien_invasion.git" target="_blank" rel="noopener noreferrer" class="btn btn-project mt-3">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 5: Qydentra Dental Clinic -->
+        <article class="project-card">
+          <div class="project-image sunset-panel">
+            <i class="fas fa-tooth panel-icon"></i>
+          </div>
+          <div class="project-content">
+            <span class="project-badge">PHP · MySQL · Bootstrap</span>
+            <h3>Qydentra — Dental Clinic Management System</h3>
+            <p>
+              A full-stack web-based dental clinic system supporting four roles — Admin, Dentist,
+              Receptionist, and Patient — each with a tailored dashboard. Includes appointment booking,
+              real-time queue management, patient records, staff management, audit logs,
+              and a notification system with custom-prefixed IDs.
+            </p>
+            <div class="project-tags">
+              <span class="tag">Multi-Role</span>
+              <span class="tag">Queue System</span>
+              <span class="tag">Appointments</span>
+              <span class="tag">MySQL</span>
+            </div>
+            <a href="https://github.com/bethanyzyreen/Qydentra.git" target="_blank" rel="noopener noreferrer" class="btn btn-project mt-3">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 6: Measurement Conversion System -->
+        <article class="project-card">
+          <div class="project-image sunset-panel">
+            <i class="fas fa-ruler-combined panel-icon"></i>
+          </div>
+          <div class="project-content">
+            <span class="project-badge">C++ · OOP</span>
+            <h3>Measurement Conversion System</h3>
+            <p>
+              A console-based C++ unit converter supporting 10 conversion categories — Length, Weight,
+              Temperature, Time, Volume, Pressure, Speed, Storage, Internet Speed, and Download Time.
+              Built with OOP principles, full input validation, and an intuitive menu-driven interface
+              that lets users convert, re-convert, or navigate freely.
+            </p>
+            <div class="project-tags">
+              <span class="tag">C++</span>
+              <span class="tag">OOP</span>
+              <span class="tag">Console App</span>
+              <span class="tag">10 Categories</span>
+            </div>
+            <a href="https://github.com/snckish/Measurement-Conversion-System.git" target="_blank" rel="noopener noreferrer" class="btn btn-project mt-3">
+              <i class="fab fa-github"></i> View on GitHub
+            </a>
+          </div>
+        </article>
 
       </div>
     </div>
   </section>
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/script.js"></script>
