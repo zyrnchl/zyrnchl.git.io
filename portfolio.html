@@ -21,16 +21,21 @@
       align-items: stretch;
     }
     @media (max-width: 991px) {
-      .project-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
-      }
+      .project-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
     }
     @media (max-width: 600px) {
-      .project-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
+      .project-grid { grid-template-columns: 1fr; gap: 18px; }
+    }
+
+    /* ── HIGHLIGHT GLOW when jumped to from CV ── */
+    .project-card:target,
+    .project-card.highlight {
+      animation: cardHighlight 2s ease forwards;
+    }
+    @keyframes cardHighlight {
+      0%   { box-shadow: 0 0 0 3px var(--accent), 0 10px 28px rgba(61,34,25,.08); border-color: var(--accent); }
+      70%  { box-shadow: 0 0 0 3px var(--accent), 0 10px 28px rgba(61,34,25,.08); border-color: var(--accent); }
+      100% { box-shadow: var(--shadow-soft); border-color: var(--line-soft); }
     }
   </style>
 </head>
@@ -70,7 +75,7 @@
         <!-- ROW 1 ─────────────────────────────────── -->
 
         <!-- PROJECT 1: Sunset Pages -->
-        <article class="project-card">
+        <article class="project-card" id="sunset-pages">
           <div class="project-image sunset-panel">
             <i class="fas fa-book-open panel-icon"></i>
           </div>
@@ -94,8 +99,8 @@
           </div>
         </article>
 
-        <!-- PROJECT 2: Zyreen Mobile App — links to local HTML file -->
-        <article class="project-card">
+        <!-- PROJECT 2: Zyreen Mobile App -->
+        <article class="project-card" id="zyreen-mobile">
           <div class="project-image sunset-panel">
             <i class="fas fa-mobile-alt panel-icon"></i>
           </div>
@@ -120,7 +125,7 @@
         </article>
 
         <!-- PROJECT 3: Zythera Furniture -->
-        <article class="project-card">
+        <article class="project-card" id="zythera">
           <div class="project-image sunset-panel">
             <i class="fas fa-couch panel-icon"></i>
           </div>
@@ -147,7 +152,7 @@
         <!-- ROW 2 ─────────────────────────────────── -->
 
         <!-- PROJECT 4: Alien Invasion -->
-        <article class="project-card">
+        <article class="project-card" id="alien-invasion">
           <div class="project-image sunset-panel">
             <i class="fas fa-rocket panel-icon"></i>
           </div>
@@ -173,7 +178,7 @@
         </article>
 
         <!-- PROJECT 5: Qydentra Dental Clinic -->
-        <article class="project-card">
+        <article class="project-card" id="qydentra">
           <div class="project-image sunset-panel">
             <i class="fas fa-tooth panel-icon"></i>
           </div>
@@ -199,7 +204,7 @@
         </article>
 
         <!-- PROJECT 6: Measurement Conversion System -->
-        <article class="project-card">
+        <article class="project-card" id="measurement-conversion">
           <div class="project-image sunset-panel">
             <i class="fas fa-ruler-combined panel-icon"></i>
           </div>
@@ -230,6 +235,21 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/script.js"></script>
+
+  <script>
+    // Highlight the card targeted via URL hash (e.g. portfolio.html#qydentra)
+    window.addEventListener('DOMContentLoaded', () => {
+      if (location.hash) {
+        const target = document.querySelector(location.hash);
+        if (target) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            target.classList.add('highlight');
+          }, 350);
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>
