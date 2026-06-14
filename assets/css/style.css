@@ -618,28 +618,57 @@ footer {
 
 .skill-bar-item {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, #fffaf7 20%, #ffffff 65%);
+  border: 1px solid rgba(201, 123, 99, 0.14);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(201, 123, 99, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.skill-bar-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(201, 123, 99, 0.3);
+  box-shadow: 0 12px 26px rgba(201, 123, 99, 0.14);
 }
 
 .skill-bar-item span {
-  width: 110px;
-  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.skill-bar-item span::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(201, 123, 99, 0.12);
   flex-shrink: 0;
 }
 
 .bar {
-  flex: 1;
-  height: 10px;
-  background: var(--accent-light);
+  width: 100%;
+  height: 11px;
+  background: #f4e4dc;
   border-radius: 50px;
   overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(61, 34, 25, 0.08);
 }
 
 .fill {
   height: 100%;
-  background: var(--accent);
+  background: linear-gradient(90deg, var(--accent) 0%, #df9b7c 58%, #f0c97a 100%);
   border-radius: 50px;
+  box-shadow: 0 3px 10px rgba(201, 123, 99, 0.25);
 }
 
 /* ── SUNSET PAGES EXPANDED CARD ── */
@@ -848,6 +877,32 @@ footer {
 /* ── FOOTER LAYOUT FIX ── */
 .footer-card .row {
   gap: 0;
+  position: relative;
+  align-items: center;
+}
+
+.footer-card .col-lg-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+}
+
+.footer-card .col-lg-4:nth-child(1) {
+  align-items: flex-start;
+}
+
+.footer-card .col-lg-4:nth-child(2) {
+  align-items: center;
+}
+
+.footer-card .col-lg-4:nth-child(3) {
+  align-items: flex-end;
+}
+
+.footer-card .col-lg-4:nth-child(3) > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-card .col-md-6 p {
@@ -1107,6 +1162,8 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 20px 0;
+  text-align: center;
 }
 
 .footer-logo-svg {
@@ -1145,6 +1202,93 @@ footer {
   margin-bottom: 14px;
 }
 
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--dark);
+  padding: 0;
+}
+
+.footer-contact-item i {
+  min-width: 20px;
+  text-align: center;
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.footer-contact-item span {
+  display: inline-block;
+}
+
+.footer-socials-icons {
+  display: grid;
+  grid-template-columns: repeat(2, 40px);
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(201, 123, 99, 0.1);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon-btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(201, 123, 99, 0.25);
+}
+
+.social-icon-btn:active {
+  transform: translateY(-1px);
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--dark);
+  padding: 0;
+}
+
+.footer-contact-item i {
+  min-width: 20px;
+  text-align: center;
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.footer-contact-item span {
+  display: inline-block;
+}
+
 .footer-nav-link {
   color: var(--dark);
   text-decoration: none;
@@ -1154,6 +1298,165 @@ footer {
 
 .footer-nav-link:hover {
   color: var(--accent);
+}
+
+/* ── FOOTER RESPONSIVE ── */
+@media (max-width: 1199px) {
+  .footer-socials-icons {
+    grid-template-columns: repeat(2, 40px);
+  }
+}
+
+@media (max-width: 991px) {
+  .footer-card {
+    padding: 28px 24px;
+  }
+
+  .col-lg-4 {
+    width: 100%;
+  }
+
+  /* Contact stays at top */
+  .col-lg-4:nth-child(1) {
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(201, 123, 99, 0.08);
+    padding-bottom: 24px;
+  }
+
+  /* Socials move to right of contact on tablet */
+  .col-lg-4:nth-child(3) {
+    position: absolute;
+    top: 28px;
+    right: 24px;
+    margin-top: 0;
+  }
+
+  .col-lg-4:nth-child(3) .footer-section-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.7rem;
+  }
+
+  .footer-socials-icons {
+    grid-template-columns: repeat(2, 40px);
+  }
+
+  /* Logo centered at bottom */
+  .col-lg-4:nth-child(2) {
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+
+  .footer-center {
+    text-align: center;
+  }
+  
+  .footer-logo-svg {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .footer-logo-name {
+    font-size: 1.15rem;
+  }
+
+  .social-icon-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-card {
+    padding: 20px 16px;
+    position: relative;
+  }
+
+  .col-lg-4 {
+    margin-bottom: 0;
+  }
+
+  /* Contact at top */
+  .col-lg-4:nth-child(1) {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(201, 123, 99, 0.08);
+  }
+
+  /* Socials on right, small */
+  .col-lg-4:nth-child(3) {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    width: auto;
+    margin-top: 0;
+  }
+
+  .col-lg-4:nth-child(3) .footer-section-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.65rem;
+  }
+
+  .footer-socials-icons {
+    grid-template-columns: repeat(2, 32px);
+    gap: 10px;
+  }
+
+  /* Logo centered */
+  .col-lg-4:nth-child(2) {
+    margin-top: 18px;
+    padding-top: 8px;
+  }
+
+  .footer-center {
+    text-align: center;
+  }
+  
+  .footer-logo-svg {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .footer-logo-name {
+    font-size: 0.95rem;
+    margin: 6px 0 2px;
+  }
+  
+  .footer-logo-tagline {
+    font-size: 0.65rem;
+  }
+  
+  .footer-section-label {
+    font-size: 0.65rem;
+    margin-bottom: 8px;
+  }
+
+  .footer-contact {
+    gap: 6px;
+  }
+
+  .footer-contact-item {
+    font-size: 0.75rem;
+    gap: 6px;
+  }
+
+  .footer-contact-item i {
+    min-width: 16px;
+    font-size: 0.8rem;
+  }
+
+  .social-icon-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .footer-card p {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+  }
 }
 /* ── FURNITURE PRODUCT COLLECTION TABLE ── */
 .furniture-table {
@@ -1231,4 +1534,203 @@ footer {
 .stock-badge.out-of-stock {
   background: #e53935;
   color: white;
+}
+
+/* ── CONSISTENT DESIGN SYSTEM ── */
+:root {
+  --surface: #fffdfb;
+  --surface-soft: #fff7f2;
+  --line-soft: rgba(201, 123, 99, 0.16);
+  --shadow-soft: 0 10px 28px rgba(61, 34, 25, 0.08);
+  --shadow-lift: 0 16px 34px rgba(61, 34, 25, 0.12);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --accent-gradient: linear-gradient(135deg, #c97b63 0%, #df9b7c 55%, #f0c97a 100%);
+}
+
+.hero-card,
+.card-section,
+.footer-card,
+.project-card,
+.project-screenshot,
+.project-summary-item,
+.feature-card,
+.skill-bar-item,
+.sp-genre-item {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-card,
+.card-section,
+.footer-card,
+.project-screenshot {
+  border-radius: var(--radius-lg);
+}
+
+.project-card,
+.project-summary-item,
+.feature-card,
+.skill-bar-item,
+.sp-genre-item {
+  border-radius: var(--radius-md);
+}
+
+.section {
+  padding: 64px 0;
+}
+
+.section-title {
+  margin-bottom: 22px;
+  letter-spacing: 0;
+}
+
+.page-header {
+  padding: 44px 0 28px;
+}
+
+.page-subtitle,
+.hero-role,
+.footer-logo-tagline {
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.hero-role {
+  font-size: 1rem;
+  margin: 0 0 10px;
+}
+
+.hero-text {
+  margin-bottom: 14px;
+}
+
+.hero-text:last-of-type {
+  margin-bottom: 24px;
+}
+
+.btn-main,
+.btn-project,
+.btn-submit,
+.back-link {
+  border-radius: 50px;
+}
+
+.project-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card:hover,
+.project-summary-item:hover,
+.feature-card:hover,
+.skill-bar-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(201, 123, 99, 0.3);
+  box-shadow: var(--shadow-lift);
+}
+
+.project-image,
+.furniture-panel,
+.sunset-panel,
+.kodular-panel,
+.sunset-hero,
+.furniture-hero,
+.kodular-hero {
+  background: var(--accent-gradient);
+}
+
+.project-badge,
+.tag,
+.timeline-year {
+  background: rgba(201, 123, 99, 0.12);
+  border: 1px solid rgba(201, 123, 99, 0.22);
+  color: var(--accent);
+}
+
+.project-summary-icon,
+.feature-icon {
+  background: var(--accent-gradient);
+  border-radius: 14px;
+  box-shadow: 0 8px 18px rgba(201, 123, 99, 0.2);
+}
+
+.project-summary-item,
+.feature-card,
+.sp-genre-item,
+.skill-bar-item {
+  background: linear-gradient(135deg, var(--surface-soft) 0%, var(--surface) 72%);
+}
+
+.sp-genre-item {
+  border-left: 1px solid var(--line-soft);
+  padding: 18px 20px;
+}
+
+.app-screenshot {
+  background: var(--surface-soft);
+  padding: 12px;
+}
+
+.app-screenshot img {
+  height: 360px;
+  object-fit: contain;
+}
+
+.screenshot-caption {
+  color: #a57a70;
+  font-size: 0.85rem;
+  font-style: italic;
+  margin: 10px 0 0;
+  text-align: center;
+}
+
+.certificate-badge-img {
+  max-width: 90px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+}
+
+.certificate-body {
+  padding-left: 0;
+}
+
+.certificate-description {
+  color: #7a5a50;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.certificate-id {
+  color: #a57a70;
+  font-size: 0.82rem;
+  margin-bottom: 0;
+}
+
+.footer-section-label {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 767px) {
+  .section {
+    padding: 44px 0;
+  }
+
+  .hero-card,
+  .card-section,
+  .footer-card {
+    border-radius: 24px;
+  }
+
+  .project-summary-item,
+  .feature-card,
+  .skill-bar-item,
+  .sp-genre-item {
+    padding: 16px;
+  }
+
+  .app-screenshot img {
+    height: 260px;
+  }
 }
